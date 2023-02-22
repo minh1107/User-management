@@ -15,7 +15,6 @@ function Header() {
     useEffect(() => {
         setShow(flagInfo)
     }, [flagInfo])
-    console.log(show, flagInfo)
     const getUser = async () => {
         const res = await apiGetUser()
         setInfoUser(res.results[0])
@@ -35,7 +34,7 @@ function Header() {
                     <Icon className='chevron right'></Icon>Info User</span>
                 <div className='flex items-center'>
                     <span className='relative max-sm:hidden'>
-                        <Icon size='big' color='blue' className='sticky note container'/>
+                        <Icon size='big' color='blue' className='sticky note container' />
                         <span className='px-2 text-[12px]  rounded-full bg-white absolute top-[-5px] font-extrabold  text-red-600 right-[5px]'>7</span>
                     </span>
                     <img className='rounded-full h-[35px] ' src={infoUser?.picture?.thumbnail} alt='thumbnail' />
@@ -44,7 +43,7 @@ function Header() {
                         <div className='ml-[3.5px] mt-[2px]' onClick={handleNavbar}>
                             <Icon className='m-0 chevron down'></Icon>
                         </div>
-                        
+
                         <div>
                             {show && <NavBar />}
                         </div>

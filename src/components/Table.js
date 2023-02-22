@@ -11,7 +11,6 @@ function Table() {
     const getUser = async () => {
         const res = await apiGetUserList(index, 10)
         setDataUserList(res?.results)
-        console.log(res?.results)
     }
     useEffect(() => {
         getUser()
@@ -32,7 +31,6 @@ function Table() {
         const arr = dataUserList?.map((item) => (
             `${item?.name.title} ${item?.name.first} ${item?.name.last}`
         ))
-        console.log(arr)
         !sortFullName ? arr.sort() : arr.reverse()
         const newArr = []
         for (let i = 0; i < arr.length; i++) {
