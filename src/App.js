@@ -3,7 +3,7 @@ import { Public } from './container/public';
 
 function App() {
   return (
-    <div className="App bg-bgApp h-full pb-[250px]">
+    <div className="App bg-bgApp">
       <Public />
     </div>
   );

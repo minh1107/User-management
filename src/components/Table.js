@@ -16,12 +16,11 @@ function Table() {
     useEffect(() => {
         getUser()
     }, [index])
-    const handleSort = () => {
+    const handleSortWithUserName = () => {
         const arr = dataUserList?.map((item) => (
             item?.login.username
         ))
         !sortUsername ? arr.sort() : arr.reverse()
-        console.log(arr)
         const newArr = []
         for (let i = 0; i < arr.length; i++) {
             newArr.push(dataUserList.find((item) => (item.login.username === arr[i])))
@@ -44,18 +43,17 @@ function Table() {
     }
     return (
         <div className='p-2  bg-white rounded-lg flex flex-col mt-14 w-[100%] py-2 '>
-            <div className='flex font-bold w-[100%] border-b-2 items-center'>
-                <span className='p-2 w-[5%] max-lg:w-[35px] max-lg:invisible'>Avatar</span>
+            <div className='flex font-bold  w-[100%] border-b-2 items-center h-[70px] max-xl:h-[45px]'>
+                <span className='p-2 w-[5%] max-lg:w-[35px] max-lg:invisible '>Avatar</span>
                 <span
-                    onClick={handleSortWithFullName}
                     className='lg:p-2 w-[45%] max-lg:w-[45%] rounded-tl-md cursor-pointer'>
-                    {!sortFullName ? <Icon className='sort alphabet up' />
-                        : <Icon className='sort alphabet down' />}
-                    Full Name</span>
-                <span onClick={handleSort} className='max-lg:w-[45%] cursor-pointer lg:p-2 w-[45%]'>
-                    {!sortUsername ? <Icon className='sort alphabet up' />
-                        : <Icon className='sort alphabet down' />}
-                    Username</span>
+                    <span onClick={handleSortWithFullName}>
+                        {!sortFullName ? <Icon className='sort alphabet up' />
+                            : <Icon className='sort alphabet down' />}Full Name</span></span>
+                <span  className='max-lg:w-[45%] cursor-pointer lg:p-2 w-[45%]'>
+                    <span onClick={handleSortWithUserName}>
+                        {!sortUsername ? <Icon className='sort alphabet up' />
+                            : <Icon className='sort alphabet down' />}Username</span></span>
             </div>
             {
                 dataUserList?.map((item) => (

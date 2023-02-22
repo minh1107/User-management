@@ -7,7 +7,7 @@ function Public() {
   const dispatch = useDispatch()
   const { flagInfo } = useSelector(state => state.app)
   return (
-    <div className='mx-[10%]'>
+    <div className='mx-[10%] h-screen 2xl:h-full pb-[100px]'>
       <header>
         <Header />
       </header>
