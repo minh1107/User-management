@@ -1,11 +1,5 @@
 import { actionType } from "./actionType"
 
-export const setHome = (info) => (
-    {
-        type: actionType.GET_HOME,
-        info
-    }
-)
 
 export const setInfoUser = (info) => (
     {
